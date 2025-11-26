@@ -1,52 +1,66 @@
-Word Frequency Analyzer – OS Project
 
-This project analyzes a large dataset to find the top 10 most frequent words using three approaches:
+# Word Frequency Analyzer – OS Project
 
-Naïve (sequential)
+This project analyzes a large dataset to identify the top 10 most frequent words using three different approaches:
 
-Multiprocessing (fork + pipes)
+* Naïve (sequential)
+* Multiprocessing (fork + pipes)
+* Multithreading (POSIX threads)
 
-Multithreading (POSIX threads)
+The purpose is to compare their performance and understand how parallelism affects execution time.
 
-The goal is to compare the performance of each method and observe the impact of parallelism on execution time.
+---
 
-Overview
+## Overview
 
-Reads all words from the dataset into a dynamic structure
+* Reads all words dynamically from a dataset
+* Counts word frequencies using three approaches
+* Sorts results using merge sort
+* Measures and compares execution time
+* Includes Amdahl’s Law analysis (see report)
 
-Counts word frequencies using different approaches
+For full details and analysis, refer to the project report (PDF).
 
-Sorts results using merge sort
+---
 
-Measures execution time for comparison
+## Building and Running
 
-Includes Amdahl’s Law analysis in the report
+### Compile
 
-For full details, refer to the project report (PDF).
-
-Building and Running
-Compile
+```bash
 gcc main.c -o OSproject -lpthread
+```
 
-Run examples
+### Naïve version
 
-Naïve:
-
+```c
 Naive(TheWords, count);
+```
 
+### Multiprocessing version
 
-Multiprocessing:
-
+```c
 MultiProcessing(TheWords, count, 4);   // number of processes
+```
 
+### Multithreading version
 
-Multithreading:
-
+```c
 MultiThreading(TheWords, count, 4);    // number of threads
+```
 
-Repository Structure (recommended)
+---
+
+## Recommended Repository Structure
+
+```
 OSproject/
 │── main.c
 │── dataset.txt
 │── README.md
 │── OSproject1.pdf
+```
+
+---
+
+
