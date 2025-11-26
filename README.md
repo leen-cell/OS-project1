@@ -1,4 +1,4 @@
-#Word Frequency Analyzer – OS Project
+Word Frequency Analyzer – OS Project
 
 This project analyzes a large dataset to find the top 10 most frequent words using three approaches:
 
